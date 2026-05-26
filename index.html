@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luce | Hair Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    @import "tailwindcss";
+
+    @theme {
+      --color-blush: #e8c4b8;
+      --color-blush-light: #f5e8e3;
+      --color-taupe: #9b8b82;
+      --color-dark: #3a2e2b;
+      --color-cream: #faf7f4;
+    }
+
+    .font-serif-en {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-serif-jp {
+      font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+    }
+
+    .fade-in-hidden {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .menu-open { display: block !important; }
+  </style>
+</head>
+
+<body class="bg-cream text-dark" style="font-family: 'Noto Serif JP', 'Yu Mincho', serif;">
+
+  <!-- ヘッダー -->
+  <header class="fixed top-0 w-full z-50 bg-cream/95 backdrop-blur-sm border-b border-blush/40">
+    <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-serif-en text-2xl font-light tracking-[0.3em] text-dark">Luce</a>
+
+      <ul class="hidden md:flex items-center gap-10">
+        <li><a href="#concept" class="text-xs tracking-widest text-taupe hover:text-dark transition-colors">CONCEPT</a></li>
+        <li><a href="#menu" class="text-xs tracking-widest text-taupe hover:text-dark transition-colors">MENU</a></li>
+        <li><a href="#gallery" class="text-xs tracking-widest text-taupe hover:text-dark transition-colors">GALLERY</a></li>
+        <li><a href="#access" class="text-xs tracking-widest text-taupe hover:text-dark transition-colors">ACCESS</a></li>
+        <li>
+          <a href="#reserve" class="text-xs tracking-widest border border-dark text-dark px-5 py-2 hover:bg-dark hover:text-cream transition-colors">
+            RESERVE
+          </a>
+        </li>
+      </ul>
+
+      <button id="hamburger" class="md:hidden text-taupe p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-blush/40 px-6 py-5">
+      <ul class="space-y-4">
+        <li><a href="#concept" class="text-xs tracking-widest text-taupe block">CONCEPT</a></li>
+        <li><a href="#menu" class="text-xs tracking-widest text-taupe block">MENU</a></li>
+        <li><a href="#gallery" class="text-xs tracking-widest text-taupe block">GALLERY</a></li>
+        <li><a href="#access" class="text-xs tracking-widest text-taupe block">ACCESS</a></li>
+        <li><a href="#reserve" class="text-xs tracking-widest text-taupe block">RESERVE</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-end pb-20 relative overflow-hidden">
+    <!-- 背景画像 -->
+    <div class="absolute inset-0">
+      <img src="/images/hero-bg.png" alt="" class="w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(58,46,43,0.6) 0%, rgba(58,46,43,0.15) 50%, transparent 100%);"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-6 w-full pt-32">
+      <div class="max-w-lg">
+        <p class="text-xs tracking-[0.4em] mb-6" style="color: #e8c4b8;">HAIR SALON · TOKYO</p>
+        <h1 class="font-serif-en text-8xl font-light leading-none text-cream mb-4" style="letter-spacing: 0.05em;">
+          Luce
+        </h1>
+        <p class="font-serif-jp text-sm leading-loose mb-2" style="letter-spacing: 0.2em; color: #f5e8e3;">
+          光のように、あなたを美しく。
+        </p>
+        <div class="w-12 h-px my-8" style="background-color: #e8c4b8;"></div>
+        <p class="text-xs leading-relaxed mb-10" style="letter-spacing: 0.1em; color: #e8d8d0;">
+          自分らしさを引き出すヘアデザインで、<br>
+          毎日をもっと輝かしく。
+        </p>
+        <a href="#reserve"
+          class="inline-block text-xs tracking-[0.3em] px-10 py-4 hover:opacity-80 transition-opacity border border-cream text-cream hover:bg-cream hover:text-dark">
+          BOOK A SEAT
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section id="concept" class="py-28 bg-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="fade-in-hidden">
+          <p class="text-xs tracking-[0.4em] text-taupe mb-4">CONCEPT</p>
+          <h2 class="font-serif-en text-5xl font-light text-dark mb-8" style="letter-spacing: 0.05em;">Our Story</h2>
+          <div class="w-8 h-px bg-blush mb-8"></div>
+          <p class="text-sm text-taupe leading-loose mb-4" style="letter-spacing: 0.08em;">
+            Luceは、「光」を意味するイタリア語。
+          </p>
+          <p class="text-sm text-taupe leading-loose mb-4" style="letter-spacing: 0.08em;">
+            一人ひとりの魅力を引き出し、<br>
+            内側から輝くような美しさを大切にしています。
+          </p>
+          <p class="text-sm text-taupe leading-loose" style="letter-spacing: 0.08em;">
+            丁寧なカウンセリングで、あなただけのスタイルを。
+          </p>
+        </div>
+        <div class="fade-in-hidden">
+          <div class="aspect-[3/4] rounded-sm overflow-hidden">
+            <img src="/images/concept.png" alt="サロンイメージ" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-28" style="background-color: #f5ede8;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in-hidden">
+        <p class="text-xs tracking-[0.4em] text-taupe mb-4">MENU</p>
+        <h2 class="font-serif-en text-5xl font-light text-dark" style="letter-spacing: 0.05em;">Services</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-px bg-blush/30">
+
+        <div class="fade-in-hidden bg-cream p-10 text-center">
+          <p class="font-serif-en text-2xl font-light text-dark mb-2" style="letter-spacing: 0.1em;">Cut</p>
+          <p class="text-xs text-taupe tracking-widest mb-6">カット</p>
+          <div class="w-6 h-px bg-blush mx-auto mb-6"></div>
+          <p class="text-xs text-taupe leading-loose mb-6">骨格・髪質に合わせた<br>丁寧なカウンセリングから</p>
+          <p class="font-serif-en text-2xl font-light text-dark">¥6,000~</p>
+        </div>
+
+        <div class="fade-in-hidden bg-cream p-10 text-center">
+          <p class="font-serif-en text-2xl font-light text-dark mb-2" style="letter-spacing: 0.1em;">Color</p>
+          <p class="text-xs text-taupe tracking-widest mb-6">カラー</p>
+          <div class="w-6 h-px bg-blush mx-auto mb-6"></div>
+          <p class="text-xs text-taupe leading-loose mb-6">肌トーンに合わせた<br>透明感のあるカラー</p>
+          <p class="font-serif-en text-2xl font-light text-dark">¥8,000~</p>
+        </div>
+
+        <div class="fade-in-hidden bg-cream p-10 text-center">
+          <p class="font-serif-en text-2xl font-light text-dark mb-2" style="letter-spacing: 0.1em;">Treatment</p>
+          <p class="text-xs text-taupe tracking-widest mb-6">トリートメント</p>
+          <div class="w-6 h-px bg-blush mx-auto mb-6"></div>
+          <p class="text-xs text-taupe leading-loose mb-6">ダメージを補修し<br>ツヤとうるおいを</p>
+          <p class="font-serif-en text-2xl font-light text-dark">¥3,000~</p>
+        </div>
+
+      </div>
+
+      <p class="text-center text-xs text-taupe mt-8 tracking-widest fade-in-hidden">
+        ※ すべてのメニューは税込価格です
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-28 bg-cream overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in-hidden">
+        <p class="text-xs tracking-[0.4em] text-taupe mb-4">GALLERY</p>
+        <h2 class="font-serif-en text-5xl font-light text-dark" style="letter-spacing: 0.05em;">Style</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="fade-in-hidden rounded-sm overflow-hidden"><img src="/images/gallery-1.png" alt="スタイル1" class="w-full h-auto"></div>
+        <div class="fade-in-hidden rounded-sm overflow-hidden"><img src="/images/gallery-2.png" alt="スタイル2" class="w-full h-auto"></div>
+        <div class="fade-in-hidden rounded-sm overflow-hidden"><img src="/images/gallery-3.png" alt="スタイル3" class="w-full h-auto"></div>
+        <div class="fade-in-hidden rounded-sm overflow-hidden"><img src="/images/gallery-4.png" alt="スタイル4" class="w-full h-auto"></div>
+      </div>
+
+      <p class="text-center text-xs text-taupe mt-10 tracking-widest fade-in-hidden">
+        @luce_hairstyle
+      </p>
+    </div>
+  </section>
+
+  <!-- Reserve -->
+  <section id="reserve" class="py-28" style="background-color: #3a2e2b;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="fade-in-hidden">
+          <p class="text-xs tracking-[0.4em] mb-4" style="color: #9b8b82;">RESERVATION</p>
+          <h2 class="font-serif-en text-5xl font-light text-cream mb-6" style="letter-spacing: 0.05em;">Book</h2>
+          <div class="w-8 h-px mb-8" style="background-color: #e8c4b8;"></div>
+          <p class="text-sm leading-loose" style="color: #9b8b82; letter-spacing: 0.08em;">
+            ご予約はお電話またはInstagramのDMにて承っております。<br>
+            お気軽にお問い合わせください。
+          </p>
+          <div class="mt-10 space-y-3">
+            <p class="text-xs tracking-widest" style="color: #9b8b82;">TEL</p>
+            <p class="font-serif-en text-2xl font-light text-cream">03-0000-0000</p>
+            <p class="text-xs" style="color: #9b8b82; letter-spacing: 0.1em;">営業時間 10:00 – 19:00　定休日：火曜</p>
+          </div>
+        </div>
+
+        <div class="fade-in-hidden">
+          <form class="space-y-4">
+            <div>
+              <label class="block text-xs tracking-widest mb-2" style="color: #9b8b82;">お名前</label>
+              <input type="text" placeholder="山田 花子"
+                class="w-full px-4 py-3 bg-transparent border text-cream text-sm focus:outline-none transition-colors"
+                style="border-color: #5a4a46; color: #faf7f4;"
+                onfocus="this.style.borderColor='#e8c4b8'" onblur="this.style.borderColor='#5a4a46'">
+            </div>
+            <div>
+              <label class="block text-xs tracking-widest mb-2" style="color: #9b8b82;">メールアドレス</label>
+              <input type="email" placeholder="example@email.com"
+                class="w-full px-4 py-3 bg-transparent border text-cream text-sm focus:outline-none transition-colors"
+                style="border-color: #5a4a46; color: #faf7f4;"
+                onfocus="this.style.borderColor='#e8c4b8'" onblur="this.style.borderColor='#5a4a46'">
+            </div>
+            <div>
+              <label class="block text-xs tracking-widest mb-2" style="color: #9b8b82;">ご希望メニュー</label>
+              <select class="w-full px-4 py-3 bg-transparent border text-sm focus:outline-none appearance-none cursor-pointer"
+                style="border-color: #5a4a46; color: #9b8b82;"
+                onfocus="this.style.borderColor='#e8c4b8'" onblur="this.style.borderColor='#5a4a46'">
+                <option value="" style="background: #3a2e2b;">選択してください</option>
+                <option value="cut" style="background: #3a2e2b;">カット</option>
+                <option value="color" style="background: #3a2e2b;">カラー</option>
+                <option value="treatment" style="background: #3a2e2b;">トリートメント</option>
+                <option value="cut-color" style="background: #3a2e2b;">カット＋カラー</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs tracking-widest mb-2" style="color: #9b8b82;">ご希望日時・備考</label>
+              <textarea rows="3" placeholder="第一希望：○月○日 ○時頃"
+                class="w-full px-4 py-3 bg-transparent border text-cream text-sm focus:outline-none resize-none"
+                style="border-color: #5a4a46; color: #faf7f4;"
+                onfocus="this.style.borderColor='#e8c4b8'" onblur="this.style.borderColor='#5a4a46'"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full text-xs tracking-[0.3em] py-4 transition-opacity hover:opacity-70"
+              style="background-color: #e8c4b8; color: #3a2e2b;">
+              送信する
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access -->
+  <section id="access" class="py-28 bg-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in-hidden">
+        <p class="text-xs tracking-[0.4em] text-taupe mb-4">ACCESS</p>
+        <h2 class="font-serif-en text-5xl font-light text-dark" style="letter-spacing: 0.05em;">Access</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="fade-in-hidden space-y-6">
+          <div>
+            <p class="text-xs tracking-widest text-taupe mb-2">ADDRESS</p>
+            <p class="text-sm leading-loose" style="letter-spacing: 0.08em;">〒000-0000<br>東京都○○区○○1-2-3</p>
+          </div>
+          <div>
+            <p class="text-xs tracking-widest text-taupe mb-2">ACCESS</p>
+            <p class="text-sm leading-loose" style="letter-spacing: 0.08em;">○○線「○○駅」徒歩3分</p>
+          </div>
+          <div>
+            <p class="text-xs tracking-widest text-taupe mb-2">HOURS</p>
+            <p class="text-sm leading-loose" style="letter-spacing: 0.08em;">10:00 – 19:00<br>定休日：火曜日</p>
+          </div>
+          <div>
+            <p class="text-xs tracking-widest text-taupe mb-2">TEL</p>
+            <p class="text-sm" style="letter-spacing: 0.08em;">03-0000-0000</p>
+          </div>
+        </div>
+
+        <div class="fade-in-hidden aspect-video bg-blush-light rounded-sm flex items-center justify-center">
+          <p class="text-xs text-taupe tracking-widest">MAP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-blush/40 bg-cream">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="font-serif-en text-xl font-light tracking-[0.4em] text-dark mb-4">Luce</p>
+      <p class="text-xs text-taupe tracking-widest">© 2025 Luce Hair Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+
+  <script>
+    // スクロールアニメーション
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.15 })
+
+    document.querySelectorAll('.fade-in-hidden').forEach(el => observer.observe(el))
+
+    // ハンバーガーメニュー
+    const hamburger = document.getElementById('hamburger')
+    const mobileMenu = document.getElementById('mobile-menu')
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('hidden'))
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    })
+  </script>
+
+</body>
+</html>
